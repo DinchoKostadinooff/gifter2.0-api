@@ -1,7 +1,7 @@
 var mongoose=require('mongoose');
 var Schema = mongoose.Schema;
 var GiftSchema = mongoose.model('Gift', new Schema({
-    owner_id:
+    ownerId:
     {
         type:String,
         required:true

@@ -19,6 +19,9 @@ router.put('/profile', auth, ctrlProfile.updateProfile);
 //person
 router.post('/person',auth, ctrlPerson.createPerson);
 router.get('/people',auth, ctrlPerson.getPeople);
+router.get('/person/:id',auth, ctrlPerson.getPersonById);
+router.put('/person/:id',auth, ctrlPerson.updatePersonById);
+router.delete('/person/:id',auth, ctrlPerson.DeletePersonById);
 
 // authentication
 router.post('/register', ctrlAuth.register);
