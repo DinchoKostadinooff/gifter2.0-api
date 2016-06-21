@@ -1,6 +1,6 @@
 var mongoose=require('mongoose');
 var Schema = mongoose.Schema;
-var GiftSchema = mongoose.model('Gift', new Schema({
+var giftSchema = new mongoose.Schema({
     ownerId:
     {
         type:String,
@@ -24,7 +24,7 @@ var GiftSchema = mongoose.model('Gift', new Schema({
     {
         type:String
     },
-    username:
+    userName:
     {
         type:String
     },
@@ -33,13 +33,12 @@ var GiftSchema = mongoose.model('Gift', new Schema({
         type:String
     },
     img: {
-        data: String,
-        contentType: String
+        type:String
     }
 
 
-}));
-module.exports = mongoose.model('Gift', GiftSchema);
+})
+mongoose.model('Gift', giftSchema);
 
 
 

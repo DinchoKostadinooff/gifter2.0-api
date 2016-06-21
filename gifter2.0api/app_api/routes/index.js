@@ -1,15 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var jwt = require('express-jwt');
-var fs = require("fs");
-var formidable = require('formidable');
-var multer  = require('multer');
-var multipart = require('connect-multiparty');
-var btoa = require('btoa');
-var multipartMiddleware = multipart();
-var atob = require('atob');
-var base64 = require('node-base64-image');
-var FileReader = require('filereader');
 var auth = jwt({
   secret: 'MY_SECRET',
   userProperty: 'payload'
@@ -32,7 +23,7 @@ router.put('/person/:id',auth, ctrlPerson.updatePersonById);
 router.delete('/person/:id',auth, ctrlPerson.DeletePersonById);
 
 //gift
-router.post('/gift/:id',auth, multipartMiddleware, ctrlGift.createGift);
+router.post('/gift/:id',auth,ctrlGift.createGift);
 
 // authentication
 router.post('/register', ctrlAuth.register);
